@@ -6,7 +6,7 @@
 [![Latest Version](https://img.shields.io/packagist/v/xmarcos/php-cs-fixer-config.svg?style=flat-square)](https://packagist.org/packages/xmarcos/php-cs-fixer-config)
 [![Software License](https://img.shields.io/packagist/l/xmarcos/php-cs-fixer-config.svg?style=flat-square)](LICENSE)
 [![Total Downloads](https://img.shields.io/packagist/dt/xmarcos/php-cs-fixer-config.svg?style=flat-square)](https://packagist.org/packages/xmarcos/php-cs-fixer-config)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c32f1a2e-bd23-41f8-8933-04976e454bd7/mini.png)](https://insight.sensiolabs.com/projects/c32f1a2e-bd23-41f8-8933-04976e454bd7)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/44da8393-8260-4eda-9189-42cb56a92c6c/mini.png)](https://insight.sensiolabs.com/projects/44da8393-8260-4eda-9189-42cb56a92c6c)
 
 A [`PHP Coding Standards Fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer) config with the rules i use in all my projects to verify and enforce coding standards.
 
