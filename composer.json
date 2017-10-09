@@ -1,0 +1,44 @@
+{
+    "name": "xmarcos/php-cs-fixer-config",
+    "description": "PHP Coding Standards Fixer Config",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "cs-fixer",
+        "php-cs-fixer-config",
+        "php-cs-fixer",
+        "xmarcos"
+    ],
+    "authors": [
+        {
+            "name": "Marcos Sader",
+            "email": "xmarcos@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "friendsofphp/php-cs-fixer": "^2.7"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "xmarcos\\PhpCsFixer\\Config\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "xmarcos\\PhpCsFixer\\Config\\Test\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs": "php-cs-fixer fix --config=.php_cs.dist -v --diff --dry-run",
+        "cs-fix": "php-cs-fixer fix --config=.php_cs.dist -v --diff"
+    }
+}
