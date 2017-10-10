@@ -1,0 +1,54 @@
+checks:
+  php:
+    code_rating: true
+    check_method_contracts:
+      verify_interface_like_constraints: true
+      verify_documented_constraints: true
+      verify_parent_constraints: true
+    duplication: true
+    more_specific_types_in_doc_comments: true
+    no_goto: true
+    no_long_variable_names:
+      maximum: '20'
+    no_short_method_names:
+      minimum: '2'
+    no_short_variable_names:
+      minimum: '2'
+    overriding_parameter: true
+    param_doc_comment_if_not_inferrable: true
+    parameter_doc_comments: true
+    return_doc_comment_if_not_inferrable: true
+    return_doc_comments: true
+    simplify_boolean_return: true
+build:
+  environment:
+    php:
+      version: 7.1
+  tests:
+    override:
+      - command: vendor/bin/phpunit
+        coverage:
+          file: build/logs/clover.xml
+          format: clover
+tools:
+  php_analyzer: true
+  php_cs_fixer:
+    config:
+      level: psr2
+      fixers:
+        unused_use: true
+        phpdoc_params: true
+        php_closing_tag: true
+  php_loc: true
+  php_mess_detector: true
+  php_pdepend: true
+  php_sim: true
+  sensiolabs_security_checker: true
+filter:
+  excluded_paths:
+    - tests/*
+build_failure_conditions:
+  - elements.rating(<= D).exists
+  - elements.rating(<= C).new.count > 2
+  - issues.severity(>= MAJOR).exists
+  - 'project.metric("scrutinizer.quality", < 6)'
