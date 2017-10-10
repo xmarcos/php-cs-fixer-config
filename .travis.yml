@@ -5,6 +5,14 @@ matrix:
       env: WITH_LOWEST=true
     - php: 7
     - php: 7.1
+fast_finish: true
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - $HOME/.php_cs.cache
+before_script:
+  - phpenv config-rm xdebug.ini
+  - phpenv rehash
 before_install:
   - composer validate
 install:
