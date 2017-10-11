@@ -9,6 +9,7 @@ matrix:
       env: USE_LOCK=false
     - php: 7
     - php: 7.1
+    - php: 7.2
 fast_finish: true
 cache:
   directories:
