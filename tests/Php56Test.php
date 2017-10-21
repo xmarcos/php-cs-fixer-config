@@ -50,6 +50,11 @@ final class Php56Test extends TestCase
         ];
     }
 
+    /**
+     * @param null|string $header
+     *
+     * @return array
+     */
     private function getHeaderRules($header = null)
     {
         return [
