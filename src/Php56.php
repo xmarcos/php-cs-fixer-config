@@ -13,10 +13,13 @@ use PhpCsFixer\Config;
 final class Php56 extends Config
 {
     /**
-     * @var string
+     * @var null|string
      */
     private $header;
 
+    /**
+     * @param null|string $header if a non-empty string is provided, it will be used to enable the header_comment fixer
+     */
     public function __construct($header = null)
     {
         parent::__construct("xmarcos' config for PHP v5.6");
