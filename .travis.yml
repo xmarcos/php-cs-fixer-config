@@ -37,6 +37,7 @@ before_script:
 
 script:
   - composer cs
+  - composer sa
   - composer test
 
 # Build Notifications
