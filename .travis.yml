@@ -1,5 +1,9 @@
+# Setup
+
 language: php
+
 matrix:
+  fast_finish: true
   include:
     - php: 5.6
       env: USE_LOCK=false
@@ -7,16 +11,18 @@ matrix:
       env: USE_LOCK=false
     - php: 7.1
     - php: 7.2
-fast_finish: true
+
 cache:
   directories:
     - $HOME/.composer/cache
     - $HOME/.php_cs.cache
-before_script:
+
+# Build Lifecycle
+before_install:
   - phpenv config-rm xdebug.ini
   - phpenv rehash
-before_install:
   - composer validate
+
 install:
   - |-
     if [[ "$USE_LOCK" == "false" ]];
@@ -25,8 +31,16 @@ install:
     else
       composer install;
     fi;
+
+before_script:
+  - 'curl -H "Accept: text/plain" https://security.sensiolabs.org/check_lock -F lock=@composer.lock'
+
 script:
   - composer cs
   - composer test
+
+# Build Notifications
 notifications:
-  email: false
+  email:
+    on_success: change
+    on_failure: change
